@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Index - Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>All Pages</h1>
+
+    <ul>
+        {% for entry in entries %}
+    {% comment %} copied from layout.html title is in urls.py declared in path and we are using entry , which is the name of title is equal to title. {% endcomment %}
+            <li><a href="{% url 'entry' title=entry %}">{{ entry }}</li>
+        {% endfor %}
+    </ul>
+    
+
+{% endblock %}
